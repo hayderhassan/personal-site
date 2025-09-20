@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
-import { Hero } from "./Hero";
+import { Hero } from "@/components/content/Hero";
 
 describe("Hero", () => {
   it("renders title and subtitle", () => {
