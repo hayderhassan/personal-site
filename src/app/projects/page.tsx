@@ -1,10 +1,9 @@
-import { Layout } from "@/components/layout/Layout";
-import { ProjectGrid } from "@/components/content/ProjectGrid";
+import { ProjectList } from "@/components/content/ProjectList/ProjectList";
+import { mockProjects } from "@/data/mockProjects";
 
 export default function ProjectsPage() {
-  return (
-    <Layout>
-      <ProjectGrid />
-    </Layout>
-  );
+  const allTags = Array.from(new Set(mockProjects.flatMap((p) => p.tags ?? [])));
+  console.log("TAGS:", allTags);
+
+  return <ProjectList projects={mockProjects} availableTags={allTags} />;
 }

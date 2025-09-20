@@ -3,13 +3,15 @@
 import { Button as ShadButton } from "@/components/ui/button";
 
 interface ButtonProps {
-  label: string;
+  label?: string;
   onClick?: () => void;
-  variant?: "default" | "secondary" | "link";
+  variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link";
+  children?: React.ReactNode;
+  className?: string;
 }
 
-export const Button: React.FC<ButtonProps> = ({ label, onClick, variant = "default" }) => (
-  <ShadButton variant={variant} onClick={onClick}>
-    {label}
+export const Button: React.FC<ButtonProps> = ({ label, onClick, variant = "default", children, className }) => (
+  <ShadButton variant={variant} onClick={onClick} className={className}>
+    {label ?? children}
   </ShadButton>
 );
